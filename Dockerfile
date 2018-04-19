@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM debian:jessie
 WORKDIR /root
 
 RUN apt-get update && \
@@ -16,7 +16,7 @@ RUN rustup target add armv7-unknown-linux-gnueabihf
 
 RUN apt-get update && \
     apt-get install --no-install-recommends -y \
-    gcc-arm-linux-gnueabihf && \
+    binutils-arm-linux-gnueabihf && \
     apt-get clean
 
 #RUN apt-get update && \
