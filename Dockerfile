@@ -12,8 +12,6 @@ RUN curl https://sh.rustup.rs -sSf | \
 
 ENV PATH=/root/.cargo/bin:$PATH
 
-# TODO: split here
-
 RUN rustup target add armv7-unknown-linux-gnueabihf
 
 RUN apt-get update && \
