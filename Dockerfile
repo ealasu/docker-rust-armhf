@@ -1,4 +1,4 @@
-FROM ubuntu:16.04
+FROM debian:stretch
 WORKDIR /root
 
 RUN apt-get update && \
@@ -15,8 +15,7 @@ ENV PATH=/root/.cargo/bin:$PATH
 RUN rustup target add armv7-unknown-linux-gnueabihf
 
 RUN apt-get update && \
-    apt-get install --no-install-recommends -y \
-    gcc-arm-linux-gnueabihf && \
+    apt-get install -y gcc-arm-linux-gnueabihf && \
     apt-get clean
 
 #RUN apt-get update && \
